@@ -52,7 +52,7 @@ const SideBar = ({ selectedUser, setSelectedUser }) => {
             <img src={assets.search_icon} alt="search" className="w-3" />
             <input
               type="text"
-              className="bg-transparent outline-none border-none text-white text-x5 placeholder-[#c8c8c8] flex-2"
+              className="bg-transparent outline-none border-none text-white text-xs placeholder-[#c8c8c8] flex-2"
               placeholder="Search User..."
             />
           </div>
@@ -61,7 +61,7 @@ const SideBar = ({ selectedUser, setSelectedUser }) => {
           <div
           onClick={() => setSelectedUser(user)}
           key={index} 
-          className={`relative flex items-center gap-2 p-2 pl-4 rounded cursor-pointer max-sm:text-sm ${selectedUser?.userId === user.userId && "bg-[#282142]/50" }`}>
+          className={`relative flex items-center gap-2 p-2 pl-4 rounded cursor-pointer max-sm:text-sm ${selectedUser?._id === user._id ? "bg-[#282142]/50" : "" }`}>
             <img src={ user?.profilePic || assets.avatar_icon } alt="" 
           className=" w-[35px] aspect-[1/1] rounded-full "
           />
